@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Training_Mobile_App.Models.Vues.Utilisateur.UtilisateurExistant"
+             BackgroundColor="WhiteSmoke">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid AnchorX="50">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="300" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="35"/>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="35"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.Resources>
+                    <Style TargetType="Label">
+                        <Setter Property="VerticalOptions" Value="Center" />
+                    </Style>
+                </Grid.Resources>
+
+
+                <Label Grid.Row="0" Grid.Column="1" Text="Musculation planification" TextColor="Black" VerticalOptions="Center" VerticalTextAlignment="Center" FontSize="Title" />
+
+                <Label Grid.Row="1" Grid.Column="1" Text="{Binding nomUtilisateur}" TextColor="Black"
+                       x:Name="nomUtilisateur" FontSize="Medium" Margin="0,0,0,80" VerticalOptions="Center" VerticalTextAlignment="Center"/>
+
+                <Image Grid.Row="2" Grid.Column="1" Source="logo.png" />
+                <Button Grid.Row="3" Grid.Column="1" Text="Continuer"
+                        VerticalOptions="End"
+                        HorizontalOptions="Center"
+                        Clicked="Button_OnClicked"
+                        BackgroundColor="#206020" Padding="50,0,50,0" BorderColor="#033D12" BorderWidth="2" CornerRadius="12"/>
+
+            </Grid>
+            <Label Text="© Antoine Bédard, Yannick Legros 2020" TextColor="#7B7B7B" FontSize="Micro" HorizontalTextAlignment="Center" Margin="0,20,0,0" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

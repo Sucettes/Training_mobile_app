@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Training_Mobile_App.Models.Classes.GestionFichiers" Collapsed="true">
+    <Position X="4.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CCAEAAAAAAgAAAgAAACAAAgAAiAIAAAAAQAQAQAAEAg=</HashCode>
+      <FileName>Models\Classes\GestionFichiers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Training_Mobile_App.Models.Classes.GestionUtilisateur" Collapsed="true">
+    <Position X="6.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAIBAAAgAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Classes\GestionUtilisateur.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Training_Mobile_App.Models.Classes.Utilisateur" Collapsed="true">
+    <Position X="6.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAABIgAAAQAAEIAABAABCAEAAggACAAAAAgAAI=</HashCode>
+      <FileName>Models\Classes\Utilisateur.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Training_Mobile_App.Models.FctBiblio.FctBiblio" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\FctBiblio\FctBiblio.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Training_Mobile_App.Models.Classes.Exercice" Collapsed="true">
+    <Position X="3.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAACAgAEAEAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Classes\Exercice.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Training_Mobile_App.Models.Classes.GestionExercice" Collapsed="true">
+    <Position X="3.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAgAAAABAAAAAAAAAAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Models\Classes\GestionExercice.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Training_Mobile_App.Models.FctBiblio.ProgressionUtilisateur" Collapsed="true">
+    <Position X="6.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAUAAAAAAAAAAAQAAAAgAAAAAAAAAAAAAAAAAAICAIA=</HashCode>
+      <FileName>Models\FctBiblio\ProgressionUtilisateur.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Training_Mobile_App.Models.FctBiblio.TupleEnListe" Collapsed="true">
+    <Position X="0.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAIAAAAAAAAAAAAAAAAAAAABAAAAAQAAAAA=</HashCode>
+      <FileName>Models\FctBiblio\TupleEnListe.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Training_Mobile_App.Models.FctBiblio.PartieDuCorpsTravailler" Collapsed="true">
+    <Position X="3.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAKAAAAEAIAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\FctBiblio\PartieDuCorpsTravailler.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Training_Mobile_App.Models.FctBiblio.Sexe" Collapsed="true">
+    <Position X="6.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAIAAAAACAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\FctBiblio\Sexe.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

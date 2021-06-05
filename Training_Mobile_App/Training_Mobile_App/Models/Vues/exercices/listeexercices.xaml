@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Training_Mobile_App.Models.Vues.exercices.listeexercices"
+             BackgroundColor="WhiteSmoke">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Liste d'exercices"
+                   FontSize="Large" 
+                   TextColor="Black"
+                   HorizontalOptions="Center"
+                   Margin="0,10,0,10"/>
+
+            <ListView x:Name="lstExercicesXAML"
+                      SeparatorColor="Gray"
+                      ItemTapped="lstExercicesXAML_ItemTapped"
+                      ItemsSource="{Binding Items}"
+                      CachingStrategy="RecycleElement" Margin="10,0">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ImageCell
+                            ImageSource="{Binding img}"
+                            DetailColor="Gray" TextColor="Black" Detail="{Binding desc}" 
+                            Text="{Binding txt}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Label Text="© Antoine Bédard, Yannick Legros 2020" TextColor="#7B7B7B" FontSize="Micro" HorizontalTextAlignment="Center" Margin="0,20,0,0" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

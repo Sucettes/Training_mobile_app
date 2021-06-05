@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Training_Mobile_App.Models.Vues.Entrainement.Progression"
+             xmlns:oxy="clr-namespace:OxyPlot.Xamarin.Forms;assembly=OxyPlot.Xamarin.Forms"
+             xmlns:entrainement="clr-namespace:Training_Mobile_App.Models.Vues.Entrainement;assembly=Training_Mobile_App"
+             xmlns:local="clr-namespace:Training_Mobile_App.Models.Vues.Entrainement"
+             BackgroundColor="WhiteSmoke">
+    <ContentPage.Content>
+        <StackLayout x:Name="masterLayout">
+            <Label Text="Progression"
+                   FontSize="Large" 
+                   TextColor="Black"
+                   HorizontalOptions="Center"
+                   Margin="0,10,0,0"/>
+            <ScrollView VerticalScrollBarVisibility="Always" Padding="0,5">
+                <Grid Padding="0,5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="50"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="10"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Picker Grid.Column="1" Grid.Row="0" Title="Choississez une période:"
+                            TitleColor="Black"
+                            TextColor="Black"
+                            x:Name="momentFiltrerGraphique" 
+                            SelectedIndexChanged="MomentFiltrerDonnerGraphique_OnSelectedIndexChanged"  
+                            HorizontalOptions="FillAndExpand">
+                        <Picker.Items>
+                            <x:String>Année actuelle</x:String>
+                            <x:String>Mois précédent</x:String>
+                            <x:String>Mois présent</x:String>
+                        </Picker.Items>
+                    </Picker>
+
+
+                    <Picker Grid.Column="1" Grid.Row="1" Title="Choississez un exercice:"
+                            TitleColor="Black"
+                            TextColor="Black"
+                            x:Name="lstExercicesXAML" 
+                            SelectedIndexChanged="ExerciceFiltrerDonnerGraphique_OnSelectedIndexChanged"  
+                            HorizontalOptions="FillAndExpand">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+
+                    <Grid Grid.Column="1" Grid.Row="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="400"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <oxy:PlotView
+                            AbsoluteLayout.LayoutFlags="All"
+                            AbsoluteLayout.LayoutBounds="0,10,1,10"
+                            x:Name="plotmodel" Grid.Row="0" Grid.Column="0"/>
+                    </Grid>
+
+                    <Button Grid.Column="1" Grid.Row="3"
+                            Text="Recommendation d'exercices"
+                            Clicked="Button_OnClickedRecommendationExercice"
+                            BackgroundColor="#206020" Margin="0,10,0,0" BorderColor="#033D12" BorderWidth="2" CornerRadius="12" />
+                </Grid>
+            </ScrollView>
+            <Label Text="© Antoine Bédard, Yannick Legros 2020" TextColor="#7B7B7B" FontSize="Micro" HorizontalTextAlignment="Center" Margin="0,20,0,0" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

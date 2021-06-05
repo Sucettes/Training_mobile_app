@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:app="clr-namespace:Android.App;assembly=Mono.Android"
+             x:Class="Training_Mobile_App.MainPage"
+             BackgroundColor="WhiteSmoke">
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <StackLayout Grid.Column="1" Grid.Row="1" x:Name="stackLayoutMap">
+        </StackLayout>
+    </Grid>
+
+
+</ContentPage>

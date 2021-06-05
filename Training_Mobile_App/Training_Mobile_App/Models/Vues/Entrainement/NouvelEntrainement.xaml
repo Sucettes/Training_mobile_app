@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Training_Mobile_App.Models.Vues.Entrainement.NouvelEntrainement"
+
+             BackgroundColor="WhiteSmoke">
+    <ContentPage.Content>
+        <ScrollView VerticalScrollBarVisibility="Always" VerticalOptions="CenterAndExpand">
+            <StackLayout>
+                <Label Text="Création d'un nouvel entrainement"
+                       FontSize="Large" 
+                       TextColor="Black"
+                       HorizontalOptions="Center"
+                       Margin="2,10,2,10"/>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="250" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="220" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.Resources>
+                        <Style TargetType="Label">
+                            <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                        </Style>
+                    </Grid.Resources>
+
+                    <ListView Grid.Column="1" Grid.Row="0" x:Name="lstExercicesXAML"
+                              SeparatorColor="Gray"
+                              HorizontalOptions="FillAndExpand"
+                              ItemsSource="{Binding Items}"
+                              ItemTapped="Handle_ItemTapped"
+                              CachingStrategy="RecycleElement">
+
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ImageCell 
+                                        ImageSource="{Binding img}"
+                                        DetailColor="Gray" TextColor="Black" 
+                                        Detail="{Binding desc}" 
+                                        Text="{Binding txt}"/>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                    <Label Grid.Column="1" Grid.Row="1" VerticalOptions="FillAndExpand" TextColor="Black" Text="Poids" FontSize="Small" TextDecorations="Underline" FontAttributes="Bold" />
+                    <Entry Grid.Column="1" Placeholder="10"
+                           PlaceholderColor="Gray"
+                           ClearButtonVisibility="WhileEditing" 
+                           Grid.Row="2" 
+                           HorizontalOptions="FillAndExpand"
+                           x:Name="poidsExercice"
+                           TextColor="Black"
+                           Keyboard="Telephone"/>
+                    <Label Grid.Column="1" Grid.Row="3" TextColor="Black" Text="Nombre de répétitions" 
+                           VerticalOptions="FillAndExpand"
+                           FontSize="Small" TextDecorations="Underline" FontAttributes="Bold"/>
+                    <Entry Grid.Column="1" Placeholder="10"
+                           PlaceholderColor="Gray"
+                           ClearButtonVisibility="WhileEditing" 
+                           HorizontalOptions="FillAndExpand"
+                           Grid.Row="4"
+                           x:Name="nbRepExercice"
+                           TextColor="Black"
+                           Keyboard="Telephone"/>
+                    <Label Grid.Column="1" Grid.Row="5" VerticalOptions="FillAndExpand" TextColor="Black" Text="Nombre de séries" FontSize="Small" TextDecorations="Underline" FontAttributes="Bold"/>
+                    <Entry Grid.Column="1" Placeholder="10"
+                           PlaceholderColor="Gray"
+                           HorizontalOptions="FillAndExpand"
+                           ClearButtonVisibility="WhileEditing" 
+                           Grid.Row="6"
+                           x:Name="nbSerieExercice"
+                           TextColor="Black"
+                           Keyboard="Telephone"/>
+
+                    <Button Grid.Column="1" Grid.Row="7"  Text="Ajouter" 
+                            HorizontalOptions="FillAndExpand"
+                            Clicked="OnButtonClickedAjouter"
+                            BackgroundColor="#206020" BorderColor="#033D12" BorderWidth="2" CornerRadius="12"/>
+
+                    <Button Grid.Column="1" Grid.Row="8" Text="Supprimer" 
+                            HorizontalOptions="FillAndExpand"
+                            Clicked="OnButtonClickedSupprimer"
+                            BackgroundColor="red" BorderColor="DarkRed" BorderWidth="2" CornerRadius="12"/>
+
+                    <ListView Grid.Column="1" Grid.Row="9" x:Name="lstExercicesAjouterXAML"
+                              ItemTapped="Handle_ItemTappedAjouter"
+                              SeparatorColor="Gray"
+                              ItemsSource="{Binding Items2}"
+                              CachingStrategy="RecycleElement">
+
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ImageCell 
+                                    ImageSource="{Binding img}"
+                                    DetailColor="Gray" TextColor="Black"
+                                    Detail="{Binding desc}" 
+                                    Text="{Binding txt}"/>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+
+                    <Button Grid.Column="1" Grid.Row="10" Text="Confirmer"   
+                            HorizontalOptions="FillAndExpand"
+                            Clicked="OnButtonClickedSuivant"
+                            BackgroundColor="#206020" BorderColor="#033D12" BorderWidth="2" CornerRadius="12"/>
+                    <Button Grid.Column="1" Grid.Row="11" Text="Annuler" 
+                            HorizontalOptions="FillAndExpand"
+                            Clicked="continuerSansEnregistrer"
+                            BackgroundColor="red" BorderColor="DarkRed" BorderWidth="2" CornerRadius="12" Margin="0,0,0,10"/>
+
+                </Grid>
+                <Label Text="© Antoine Bédard, Yannick Legros 2020" TextColor="#7B7B7B" FontSize="Micro" HorizontalTextAlignment="Center" Margin="0,20,0,5" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

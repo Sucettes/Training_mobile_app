@@ -1,0 +1,130 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+    <OutputType>Library</OutputType>
+    <AssemblyName>Training_Mobile_App</AssemblyName>
+    <Product>Training_Mobile_App</Product>
+    <PackageId>Training_Mobile_App</PackageId>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\bench_press.png" />
+    <None Remove="Resources\Biceps_curl.png" />
+    <None Remove="Resources\bike.png" />
+    <None Remove="Resources\blackScreen.mp4" />
+    <None Remove="Resources\donneesDUtilisateur.csv" />
+    <None Remove="Resources\dumbbell_press_shoulder.png" />
+    <None Remove="Resources\exercices.csv" />
+    <None Remove="Resources\la_chaise.png" />
+    <None Remove="Resources\la_planche.png" />
+    <None Remove="Resources\leg_press.png" />
+    <None Remove="Resources\progresPoids.csv" />
+    <None Remove="Resources\pull_up.png" />
+    <None Remove="Resources\redressement_assis.png" />
+    <None Remove="Resources\squat.png" />
+    <None Remove="Resources\triceps_extension.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\bench_press.png" />
+    <EmbeddedResource Include="Resources\Biceps_curl.png" />
+    <EmbeddedResource Include="Resources\bike.png" />
+    <EmbeddedResource Include="Resources\dumbbell_press_shoulder.png" />
+    <EmbeddedResource Include="Resources\la_chaise.png" />
+    <EmbeddedResource Include="Resources\la_planche.png" />
+    <EmbeddedResource Include="Resources\leg_press.png" />
+    <EmbeddedResource Include="Resources\pull_up.png" />
+    <EmbeddedResource Include="Resources\redressement_assis.png" />
+    <EmbeddedResource Include="Resources\squat.png" />
+    <EmbeddedResource Include="Resources\triceps_extension.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\donneesDUtilisateur.csv" />
+    <Resource Include="Resources\exercices.csv" />
+    <Resource Include="Resources\progresPoids.csv" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="built.io.Android.dll" Version="1.0.0" />
+    <PackageReference Include="OxyPlot.Xamarin.Forms" Version="1.0.0" />
+    <PackageReference Include="Rg.Plugins.Popup" Version="2.0.0.6" />
+    <PackageReference Include="System.IO" Version="4.3.0" />
+    <PackageReference Include="Xam.Plugin.SimpleAudioPlayer" Version="1.4.0" />
+    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1687" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Mono.Android">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\ReferenceAssemblies\Microsoft\Framework\MonoAndroid\v9.0\Mono.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform.Android">
+      <HintPath>..\..\..\..\..\..\Microsoft\Xamarin\NuGet\xamarin.forms\4.6.0.1141\lib\MonoAndroid90\Xamarin.Forms.Platform.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform.iOS">
+      <HintPath>..\..\..\..\..\..\Microsoft\Xamarin\NuGet\xamarin.forms\4.6.0.1141\buildTransitive\XCODE11\Xamarin.Forms.Platform.iOS.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Models\Vues\Entrainement.bak\JourPrecedent.xaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Models\Vues\Entrainement.bak\NouvelEntrainement.xaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Models\Vues\Entrainement.bak\Progression.xaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Models\Vues\ConteneurPrincipal\ConteneurPrincipal.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Models\Vues\Entrainement\JourPrecedent.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Models\Vues\Entrainement\NouvelEntrainement.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Models\Vues\Entrainement\Progression.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Models\Vues\exercices\listeexercices.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Models\Vues\Tutoriel\Tutoriel.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Models\Vues\Utilisateur\ModifierUtilisateur.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Models\Vues\Utilisateur\NouvelUtilisateur.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Models\Vues\Utilisateur\NouvelUtilisateurPage2.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Models\Vues\Utilisateur\UtilisateurExistant.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

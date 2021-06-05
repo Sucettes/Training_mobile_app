@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Training_Mobile_App.Models.Vues.Utilisateur.NouvelUtilisateur"
+             BackgroundColor="WhiteSmoke">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Création d'un nouvel utilisateur"
+                   FontSize="Large" 
+                   TextColor="Black"
+                   HorizontalOptions="Center"
+                   Margin="0,10,0,10"/>
+            
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="35"/>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="35"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.Resources>
+                    <Style TargetType="Label">
+                        <Setter Property="VerticalOptions" Value="Center" />
+                    </Style>
+                </Grid.Resources>
+
+                <Label Grid.Row="0" Grid.Column="1" TextColor="Black" Text="Votre prénom :" FontSize="Medium" FontAttributes="Bold"/>
+                <Entry Placeholder="abcd"
+                       ClearButtonVisibility="WhileEditing"
+                       Grid.Row="1" Grid.Column="1" 
+                       x:Name="prenomUtilisateur"
+                       PlaceholderColor="gray"
+                       TextColor="Black"
+                       Keyboard="Chat"/>
+                <Label Grid.Row="2" Grid.Column="1" TextColor="Black" Text="Votre nom :" FontSize="Medium" FontAttributes="Bold"/>
+                <Entry Placeholder="abcd"
+                       ClearButtonVisibility="WhileEditing" 
+                       Grid.Row="3" Grid.Column="1" 
+                       x:Name="nomUtilisateur"
+                       PlaceholderColor="gray"
+                       TextColor="Black"
+                       Keyboard="Chat"/>
+                <Label Grid.Row="4" Grid.Column="1" TextColor="Black" Text="Votre âge :" FontSize="Medium" FontAttributes="Bold"/>
+                <Entry Placeholder="10"
+                       PlaceholderColor="Gray"
+                       ClearButtonVisibility="WhileEditing" 
+                       Grid.Row="5" Grid.Column="1" 
+                       x:Name="ageUtilisateur"
+                       TextColor="Black"
+                       Keyboard="Telephone"/>
+                <Label Grid.Row="6" Grid.Column="1" TextColor="Black" Text="Votre genre :" FontSize="Medium" FontAttributes="Bold"/>
+                <Picker Grid.Row="7" Grid.Column="1" Title="Choississez votre genre:"
+                        TitleColor="Black"
+                        TextColor="Black"
+                        x:Name="genreUtilisateur" 
+                        SelectedIndexChanged="GenreUtilisateur_OnSelectedIndexChanged"  
+                        HorizontalOptions="FillAndExpand">
+                    <Picker.Items>
+                        <x:String>Femme</x:String>
+                        <x:String>Homme</x:String>
+                        <x:String>Autre</x:String>
+                    </Picker.Items>
+                </Picker>
+
+            </Grid>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Button Text="Suivant" 
+                        Margin="0,35,0,22"
+                        HorizontalOptions="Center"
+                        Clicked="OnButtonClicked" Padding="50,0,50,0"
+                        BackgroundColor="#206020" BorderColor="#033D12" BorderWidth="2" CornerRadius="12"/>
+            </Grid>
+
+            <Label TextColor="Black" Text="Étape 1/2" HorizontalTextAlignment="Center" FontSize="Medium"/>
+            <ProgressBar x:Name="ProgressBar"  Progress="0.5" ProgressColor="Red" Margin="0,0,0,15"/>
+            <Label Text="© Antoine Bédard, Yannick Legros 2020" TextColor="#7B7B7B" FontSize="Micro" HorizontalTextAlignment="Center" Margin="0,20,0,0" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

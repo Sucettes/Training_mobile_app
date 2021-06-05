@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Training_Mobile_App.Models.Vues.Utilisateur.ModifierUtilisateur"
+             BackgroundColor="WhiteSmoke">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Label Text="Modification de l'utilisateur"
+                   VerticalOptions="Start" 
+                   HorizontalOptions="CenterAndExpand" 
+                   TextColor="Black"
+                   FontSize="Large"/>
+
+            <Button Text="Modifier l'utilisateur"
+                    VerticalOptions="Start"
+                    HorizontalOptions="Center"
+                    Clicked="btnModifierUtilisateur_Click"
+                    x:Name="btnModifUtilisateur"
+                    BackgroundColor="#206020" Padding="50,0,50,0" BorderColor="#033D12" BorderWidth="2" CornerRadius="12"/>
+
+            <Entry PlaceholderColor="Gray"
+                   ClearButtonVisibility="WhileEditing" 
+                   x:Name="poids"
+                   TextColor="Black"
+                   IsVisible="False"
+                   Keyboard="Telephone"
+                   Margin="10,0,10,0"/>
+
+            <Entry PlaceholderColor="Gray"
+                   ClearButtonVisibility="WhileEditing" 
+                   x:Name="musculaire"
+                   TextColor="Black"
+                   IsVisible="False"
+                   Keyboard="Telephone"
+                   Margin="10,0,10,0"/>
+
+            <Entry PlaceholderColor="Gray"
+                   ClearButtonVisibility="WhileEditing" 
+                   x:Name="grasse"
+                   TextColor="Black"
+                   IsVisible="False"
+                   Keyboard="Telephone"
+                   Margin="10,0,10,0"/>
+
+            <Button Text="Accepter les changements"
+                    x:Name="btnChangement"
+                    HorizontalOptions="Center"
+                    Clicked="btnAccepterChangement_Click"
+                    IsVisible="False"
+                    BackgroundColor="#206020" Padding="50,0,50,0" BorderColor="#033D12" BorderWidth="2" CornerRadius="12"/>
+
+            <Button Text="Supprimer l'utilisateur"
+                    VerticalOptions="End"
+                    HorizontalOptions="Center"
+                    Clicked="btnSUpprimerUtilisateur_Click"
+                    BackgroundColor="red" Padding="50,0,50,0" BorderColor="DarkRed" BorderWidth="2" CornerRadius="12"/>
+
+            <Label HorizontalOptions="Center" VerticalOptions="End" x:Name="messageFeedback" />
+            <Label Text="© Antoine Bédard, Yannick Legros 2020" TextColor="#7B7B7B" FontSize="Micro" HorizontalTextAlignment="Center" Margin="0,20,0,0" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
